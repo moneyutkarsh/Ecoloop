@@ -1,0 +1,25 @@
+hour,timestamp,carbon_intensity_gco2_kwh,region,source
+0,2024-07-01 00:00:00,310.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+1,2024-07-01 01:00:00,295.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+2,2024-07-01 02:00:00,280.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+3,2024-07-01 03:00:00,275.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+4,2024-07-01 04:00:00,285.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+5,2024-07-01 05:00:00,320.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+6,2024-07-01 06:00:00,410.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+7,2024-07-01 07:00:00,460.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+8,2024-07-01 08:00:00,430.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+9,2024-07-01 09:00:00,350.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+10,2024-07-01 10:00:00,240.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+11,2024-07-01 11:00:00,195.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+12,2024-07-01 12:00:00,175.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+13,2024-07-01 13:00:00,185.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+14,2024-07-01 14:00:00,200.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+15,2024-07-01 15:00:00,230.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+16,2024-07-01 16:00:00,290.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+17,2024-07-01 17:00:00,440.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+18,2024-07-01 18:00:00,540.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+19,2024-07-01 19:00:00,590.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+20,2024-07-01 20:00:00,560.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+21,2024-07-01 21:00:00,490.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+22,2024-07-01 22:00:00,410.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
+23,2024-07-01 23:00:00,350.0,PJM_ComEd_Chicago,EIA-930 / PJM EIS Real Historical Grid Data
