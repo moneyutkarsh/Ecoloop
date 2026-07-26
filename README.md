@@ -31,7 +31,6 @@
 - [Standards Compliance](#standards-compliance)
 - [Testing](#testing)
 - [Results](#results)
-- [Artifacts](#artifacts)
 - [Future Work](#future-work)
 - [Contributors](#contributors)
 - [License](#license)
