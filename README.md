@@ -85,6 +85,8 @@ All metrics are verified through automated pipeline execution (`python test_full
 
 ## Architecture Diagram
 
+> For full end-to-end system architecture specifications, dataflow topology, and detailed component interactions, see **[`docs/COMPLETE_SYSTEM_DOCUMENTATION.md`](docs/COMPLETE_SYSTEM_DOCUMENTATION.md)**.
+
 ![System Architecture](ScreenShots/Screenshot%202026-07-26%20164321.png)
 
 ```
@@ -359,10 +361,14 @@ python tests/test_bms.py
 
 ---
 
-
 ## Future Work
 
 - **Multi-Day Horizon Expansion**: Extending closed-loop control across multi-week seasonal weather datasets.
 - **Physical BACnet/Modbus Gateway Integration**: Direct deployment to physical IoT building gateways via `TelemetryStreamGateway`.
 - **Multi-Building Campus Coordination**: Scaled MCP tool orchestration across heterogeneous building fleets.
 
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
