@@ -32,7 +32,7 @@
 - [Testing](#testing)
 - [Results](#results)
 - [Future Work](#future-work)
-
+- [License](#License)
 ---
 
 ## About the Project
