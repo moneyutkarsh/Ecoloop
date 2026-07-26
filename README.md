@@ -32,7 +32,6 @@
 - [Testing](#testing)
 - [Results](#results)
 - [Future Work](#future-work)
-- [License](#license)
 
 ---
 
@@ -367,8 +366,3 @@ python tests/test_bms.py
 - **Physical BACnet/Modbus Gateway Integration**: Direct deployment to physical IoT building gateways via `TelemetryStreamGateway`.
 - **Multi-Building Campus Coordination**: Scaled MCP tool orchestration across heterogeneous building fleets.
 
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
