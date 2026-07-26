@@ -365,15 +365,6 @@ python tests/test_bms.py
 
 ---
 
-## Artifacts
-
-- Master Benchmarks Record: [`BENCHMARKS.md`](BENCHMARKS.md)
-- Complete System Documentation: [`docs/COMPLETE_SYSTEM_DOCUMENTATION.md`](docs/COMPLETE_SYSTEM_DOCUMENTATION.md)
-- Architecture Specification: [`architecture.md`](architecture.md)
-- Software Quality & Testing Report: [`TESTING.md`](TESTING.md)
-- Presentation & Demo Checklist: [`DEMO_CHECKLIST.md`](DEMO_CHECKLIST.md)
-
----
 
 ## Future Work
 
