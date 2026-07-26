@@ -32,7 +32,6 @@
 - [Testing](#testing)
 - [Results](#results)
 - [Future Work](#future-work)
-- [Contributors](#contributors)
 - [License](#license)
 
 ---
@@ -367,12 +366,6 @@ python tests/test_bms.py
 - **Multi-Day Horizon Expansion**: Extending closed-loop control across multi-week seasonal weather datasets.
 - **Physical BACnet/Modbus Gateway Integration**: Direct deployment to physical IoT building gateways via `TelemetryStreamGateway`.
 - **Multi-Building Campus Coordination**: Scaled MCP tool orchestration across heterogeneous building fleets.
-
----
-
-## Contributors
-
-- **Eco-Loop Engineering Team**
 
 ---
 
