@@ -82,8 +82,20 @@ def get_lookahead_forecast(hour_of_day: int, hours_ahead: int = 2) -> Dict[str, 
     # 1. Real Carbon Forecast
     carbon_forecast = [get_carbon_intensity(h) for h in forecast_hours]
 
-    # 2. Outdoor Weather Forecast (Chicago summer day curve)
-    hourly_temps = [21.5, 20.8, 20.2, 19.8, 19.5, 20.5, 22.0, 24.0, 26.2, 28.5, 30.2, 31.8, 32.5, 33.0, 32.8, 32.0, 30.5, 28.8, 26.8, 25.2, 24.0, 23.0, 22.2, 21.6]
+    # 2. Outdoor Weather Forecast
+    from config import USE_LIVE_WEATHER, WEATHER_EPW_PATH
+    from run_baseline import load_epw_weather_data
+
+    hourly_temps = None
+    if USE_LIVE_WEATHER:
+        try:
+            from weather_api import fetch_dynamic_weather
+            hourly_temps = fetch_dynamic_weather()
+        except Exception:
+            pass
+    if not hourly_temps:
+        hourly_temps = load_epw_weather_data(WEATHER_EPW_PATH)
+
     weather_forecast = [hourly_temps[h] for h in forecast_hours]
 
     # 3. Multi-Zone Occupancy Schedule Forecast

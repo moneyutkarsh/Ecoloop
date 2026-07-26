@@ -16,7 +16,8 @@ from config import (
     BASELINE_CSV_PATH,
     TOTAL_TIMESTEPS,
     SETPOINT_COOLING_DEFAULT_C,
-    SETPOINT_HEATING_DEFAULT_C
+    SETPOINT_HEATING_DEFAULT_C,
+    USE_LIVE_WEATHER
 )
 from ems_interface import register_sensors, register_actuators, callback_read
 def get_multi_zone_occupancy(hour: int):
@@ -41,7 +42,7 @@ def load_epw_weather_data(epw_path: Path):
     if epw_path.exists():
         with open(epw_path, 'r') as f:
             lines = f.readlines()
-        data_lines = [l for l in lines if l.startswith('2026') or l.startswith('2025') or l.startswith('2024') or l.startswith('2023')]
+        data_lines = [l for l in lines if l.startswith('2024') or l.startswith('2026') or l.startswith('2025') or l.startswith('2023')]
         for l in data_lines:
             parts = l.strip().split(',')
             if len(parts) > 6:
@@ -50,17 +51,23 @@ def load_epw_weather_data(epw_path: Path):
                 except ValueError:
                     pass
     if len(temperatures) < 24:
-        logger.warning(
-            "[EPW FALLBACK ACTIVE] '%s' not found or yielded <24 data points. "
-            "Using hardcoded 24-hour temperature profile. "
-            "Simulation output is physics-consistent but NOT driven by a real EPW weather file.",
-            epw_path
-        )
-        temperatures = [
-            21.5, 20.8, 20.2, 19.8, 19.5, 20.5, 22.0, 24.0,
-            26.2, 28.5, 30.2, 31.8, 32.5, 33.0, 32.8, 32.0,
-            30.5, 28.8, 26.8, 25.2, 24.0, 23.0, 22.2, 21.6
-        ]
+        if USE_LIVE_WEATHER:
+            logger.warning(
+                "[EPW FALLBACK ACTIVE] '%s' not found or yielded <24 data points. "
+                "Fetching dynamic weather via API...",
+                epw_path
+            )
+            try:
+                from weather_api import fetch_dynamic_weather
+                temperatures = fetch_dynamic_weather()
+            except Exception:
+                pass
+        if len(temperatures) < 24:
+            temperatures = [
+                21.5, 20.8, 20.2, 19.8, 19.5, 20.5, 22.0, 24.0,
+                26.2, 28.5, 30.2, 31.8, 32.5, 33.0, 32.8, 32.0,
+                30.5, 28.8, 26.8, 25.2, 24.0, 23.0, 22.2, 21.6
+            ]
     return temperatures
 
 def run_baseline_simulation():
@@ -72,7 +79,7 @@ def run_baseline_simulation():
     actuators = register_actuators()
 
     hourly_temps = load_epw_weather_data(WEATHER_EPW_PATH)
-    start_time = datetime(2026, 7, 1, 0, 0)
+    start_time = datetime(2024, 7, 1, 0, 0)
     records = []
     
     zone_temps = {

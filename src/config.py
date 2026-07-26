@@ -28,6 +28,9 @@ BASELINE_CSV_PATH: Path = LOGS_DIR / "baseline_output.csv"
 AI_CSV_PATH: Path = LOGS_DIR / "ai_output.csv"
 DECISIONS_LOG_PATH: Path = LOGS_DIR / "decisions_log.jsonl"
 
+# Feature Flags (Live weather off by default for offline reproducibility)
+USE_LIVE_WEATHER: bool = os.getenv("USE_LIVE_WEATHER", "False").lower() in ("true", "1")
+
 # Simulation Timestep & Comfort Bounds
 TIMESTEPS_PER_HOUR: int = 4  # 15-minute timesteps
 TOTAL_HOURS: int = 24

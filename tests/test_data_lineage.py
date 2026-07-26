@@ -229,3 +229,9 @@ class TestDataProvenance:
                 h.update(f.read(65536))
             digest = h.hexdigest()
             assert len(digest) == 64, f"Unexpected SHA-256 digest for {path.name}"
+
+
+if __name__ == "__main__":
+    import pytest
+    sys.exit(pytest.main([__file__, "-v"]))
+

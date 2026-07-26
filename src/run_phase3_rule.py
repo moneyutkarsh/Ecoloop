@@ -24,7 +24,7 @@ def run_phase3_simulation():
     print("=" * 70)
     
     hourly_temps = load_epw_weather_data(WEATHER_EPW_PATH)
-    start_time = datetime(2026, 7, 1, 0, 0)
+    start_time = datetime(2024, 7, 1, 0, 0)
     records = []
     
     zone_temp = 22.0

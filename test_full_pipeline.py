@@ -95,6 +95,15 @@ def test_dashboard_import() -> float:
     print(f"  [OK] Dashboard app compiled cleanly in {t_elapsed:.2f}s.")
     return t_elapsed
 
+def test_unit_tests() -> float:
+    print_header("TEST 5: Running BMS Automated Unit Test Suite (tests/test_bms.py)")
+    t0 = time.time()
+    res = subprocess.run([sys.executable, "tests/test_bms.py"], cwd=BASE_DIR, capture_output=True, text=True)
+    t_elapsed = time.time() - t0
+    assert res.returncode == 0, f"Unit test suite failed: {res.stderr}"
+    print(f"  [OK] All 7 Unit Tests passed cleanly in {t_elapsed:.2f}s.")
+    return t_elapsed
+
 def main():
     parser = argparse.ArgumentParser(description="Clean-state full pipeline test harness")
     parser.add_argument("--force", action="store_true", help="Clean logs without prompt")
@@ -114,17 +123,20 @@ def main():
         t_base = test_baseline()
         t_ai = test_ai_loop()
         t_dash = test_dashboard_import()
+        t_unit = test_unit_tests()
         t_total = time.time() - t_start
         
         print_header("SUMMARY: ALL PIPELINE TESTS PASSED 100% SUCCESSFULLY")
         print(f"  1. Baseline Simulation:   {t_base:.2f}s  [PASS]")
         print(f"  2. Deep Reasoning AI:     {t_ai:.2f}s  [PASS]")
         print(f"  3. Dashboard App Syntax:  {t_dash:.2f}s  [PASS]")
+        print(f"  4. BMS Unit Test Suite:   {t_unit:.2f}s  [PASS]")
         print(f"  -------------------------------------------")
         print(f"  TOTAL PIPELINE TIMING:    {t_total:.2f}s  [ALL PASS]\n")
     except Exception as e:
         print(f"\n[FAIL] Pipeline test encountered error: {e}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

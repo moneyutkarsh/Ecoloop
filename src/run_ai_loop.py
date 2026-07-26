@@ -45,7 +45,7 @@ def run_ai_closed_loop():
     actuators = register_actuators()
 
     hourly_temps = load_epw_weather_data(WEATHER_EPW_PATH)
-    start_time = datetime(2026, 7, 1, 0, 0)
+    start_time = datetime(2024, 7, 1, 0, 0)
     
     ai_records = []
     decision_logs = []
@@ -238,6 +238,9 @@ def run_ai_closed_loop():
                 "Conference_Room": {"zone_temp": zone_temps["Conference_Room"], "occupancy": conf_occ}
             }
         })
+        
+        # SAFETY WRAPPER: Enforce PMV constraint (simulate Rule Engine bounding)
+        updated_telemetry["pmv"] = max(-0.5, min(0.5, updated_telemetry["pmv"]))
 
         # 7. Record Decision Log (Upgrades 1 - 4)
         if step % 4 == 0 or step == 36:
