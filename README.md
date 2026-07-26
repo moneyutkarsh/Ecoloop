@@ -127,9 +127,6 @@ All metrics are verified through automated pipeline execution (`python test_full
 ```
 eco-loop-building-agents/
 ├── README.md                     # Master documentation
-├── BENCHMARKS.md                 # Single source-of-truth verified metrics
-├── TESTING.md                    # Software quality & failure-mode docs
-├── DEMO_CHECKLIST.md             # Hackathon presentation walkthrough
 ├── requirements.txt              # Dependency manifest
 ├── run_full_demo.py              # One-command demo launcher
 ├── test_full_pipeline.py         # Verification test harness
